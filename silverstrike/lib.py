@@ -65,7 +65,7 @@ def import_firefly(csv_file):
     notes = 'notes'
     transaction_type = 'transaction_type'
 
-    system_account, _ = Account.objects.get_or_create(name='system', account_type=Account.SYSTEM)
+    system_account, _ = Account.objects.get_or_create(name='System Account', account_type=Account.SYSTEM)
 
     personal_accounts = dict()
     expense_accounts = dict()
