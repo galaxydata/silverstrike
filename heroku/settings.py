@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -153,3 +154,11 @@ else:
 
 ALWAYS_AUTHENTICATED_USERNAME = 'demo'
 ALWAYS_AUTHENTICATED_DEBUG_ONLY = False
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated'
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+}
